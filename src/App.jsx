@@ -4,6 +4,7 @@ import Header from './component/Header'
 import Gallery from './component/Gallery'
 import Footer from './component/Footer'
 
+
 function App() {
 
 

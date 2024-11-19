@@ -6,6 +6,7 @@ import Footer from './component/Footer'
 
 
 function App() {
+  const [displ]
 
 
   return (

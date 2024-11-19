@@ -7,12 +7,13 @@ function HornedBeast(props) {
 
     const addFavorites = () => {
         setFavorites(favorites + 1);
+        
     }
     return (
         <>
-           
+
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.imageUrl} />
+                <Card.Img variant="top" src={props.imageUrl} onClick={addFavorites} />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>

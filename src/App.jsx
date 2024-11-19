@@ -1,18 +1,39 @@
-
+import Header from './components/Header'
+import Gallery from './components/Gallery'
+import Footer from './components/Footer'
+import allBeasts from './data.json'
+import SelectedBeast from './components/SelectedBeast'
 import './App.css'
-import Header from './component/Header'
-import Gallery from './component/Gallery'
-import Footer from './component/Footer'
+import { useState } from 'react'
 
 
 function App() {
-  const [displ]
 
+  const [displayModal, setDisplayModal] = useState(false);
+  const [selectedBeast, setSelectedBeast] = useState({});
+
+  function displayAsModal(name) {
+    const beastWithName = allBeasts.find(beast => beast.title === name);
+    setSelectedBeast(beastWithName);
+    setDisplayModal(true);
+  }
+
+  function handleClose() {
+    setDisplayModal(false);
+  }
 
   return (
     <>
       <Header />
-      <Gallery />
+      <Gallery
+        allBeasts={allBeasts}
+        displayAsModal={displayAsModal}
+      />
+      <SelectedBeast
+        selectedBeast={selectedBeast}
+        show={displayModal}
+        handleClose={handleClose}
+      />
       <Footer />
     </>
   )
